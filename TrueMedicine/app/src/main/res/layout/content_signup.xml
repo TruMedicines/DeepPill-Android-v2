@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.SignupActivity"
+    tools:showIn="@layout/activity_signup">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/online_pro_version"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#2C3E4F"
+                    android:textSize="20sp"
+                    android:inputType="none"
+                    android:padding="26dp"
+                    android:text="@string/foto_limit"
+                    android:textColor="@color/button_text_color" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#354B60"
+                    android:textSize="20sp"
+                    android:inputType="none"
+                    android:padding="26dp"
+                    android:text="@string/pattern_recognition"
+                    android:textColor="@color/button_text_color" />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#2C3E4F"
+                    android:inputType="none"
+                    android:padding="26dp"
+                    android:text="@string/price"
+                    android:textColor="@color/button_text_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signup_linear_layout"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/register_here"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <android.support.design.widget.TextInputLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <truemedicine.logiticks.com.trumedicine.views.CGEditText
+                        android:id="@+id/firstNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/layout_bottom_space"
+                        android:ems="10"
+                        android:hint="@string/enter_name"
+                        android:inputType="textPersonName|textCapSentences" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <truemedicine.logiticks.com.trumedicine.views.CGEditText
+                        android:id="@+id/lastNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/layout_bottom_space"
+                        android:ems="10"
+                        android:hint="@string/last_name"
+                        android:inputType="textPersonName|textCapSentences" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <truemedicine.logiticks.com.trumedicine.views.CGEditText
+                        android:id="@+id/usernameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nameEditText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/layout_bottom_space"
+                        android:ems="10"
+                        android:hint="@string/enter_email"
+                        android:inputType="textEmailAddress" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <truemedicine.logiticks.com.trumedicine.views.CGEditText
+                        android:id="@+id/passwordEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/layout_bottom_space"
+                        android:ems="10"
+                        android:hint="@string/enter_password"
+                        android:inputType="textPassword" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <truemedicine.logiticks.com.trumedicine.views.CGEditText
+                        android:id="@+id/confirmPasswordEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/passwordEditText"
+                        android:layout_alignRight="@+id/passwordEditText"
+                        android:layout_below="@+id/passwordEditText"
+                        android:layout_marginBottom="@dimen/layout_bottom_space"
+                        android:ems="10"
+                        android:hint="@string/confirm_password"
+                        android:inputType="textPassword" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/signUpButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_bottom_space"
+                    android:background="@drawable/upgrade_button"
+                    android:text="@string/next"
+                    android:textColor="@color/button_text_color" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

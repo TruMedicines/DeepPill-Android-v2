@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_sync_free"
+            android:icon="@drawable/ic_sync_black_24dp"
+            android:title="@string/download_free_data" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings" />
+        <item
+            android:id="@+id/nav_upgrade"
+            android:icon="@drawable/ic_upgrade"
+            android:title="@string/upgrade" />
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_accessibility_black_24dp"
+            android:title="@string/login" />
+    </group>
+    <item android:title="@string/info">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="@string/about" />
+
+            <item
+                android:id="@+id/nav_license"
+                android:icon="@drawable/ic_license"
+                android:title="@string/license" />
+
+        </menu>
+    </item>
+
+
+</menu>

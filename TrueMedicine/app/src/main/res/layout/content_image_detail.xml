@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detailRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tooltip_bg"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.ImageDetailActivity"
+    tools:showIn="@layout/activity_image_detail">
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_above="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_margin="@dimen/common_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <truemedicine.logiticks.com.trumedicine.views.CGTextViewLight
+                android:id="@+id/title_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/capture_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/please_capture_nor_upload" />
+
+                <ImageView
+                    android:id="@+id/imgView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitCenter"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <truemedicine.logiticks.com.trumedicine.views.CGTextViewLight
+                android:id="@+id/description_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <truemedicine.logiticks.com.trumedicine.views.CGButton
+                    android:id="@+id/playButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/buttons"
+                    android:text="@string/audio_play_again"
+                    android:textColor="@android:color/black" />
+
+                <truemedicine.logiticks.com.trumedicine.views.CGButton
+                    android:id="@+id/editButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/buttons"
+                    android:text="@string/edit"
+                    android:textColor="@android:color/black" />
+
+                <truemedicine.logiticks.com.trumedicine.views.CGButton
+                    android:id="@+id/deleteButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/buttons"
+                    android:text="@string/delete"
+                    android:textColor="@android:color/black" />
+
+                <ImageButton
+                    android:id="@+id/captureButton"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/cb"
+                    android:textColor="@android:color/white"
+                    tools:ignore="ContentDescription" />
+
+                <ImageButton
+                    android:id="@+id/galleryButton"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/gb"
+                    android:textColor="@android:color/white"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <truemedicine.logiticks.com.trumedicine.views.CGEditText
+                    android:id="@+id/titleEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_bottom_space"
+                    android:ems="10"
+                    android:hint="@string/enter_title"
+                    android:inputType="textCapSentences"
+                    android:lines="1"
+                    android:textColor="@color/main_drawer_head_bg" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <truemedicine.logiticks.com.trumedicine.views.CGEditText
+                    android:id="@+id/descriptionEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_bottom_space"
+                    android:hint="@string/description"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:textColor="@color/main_drawer_head_bg" />
+            </android.support.design.widget.TextInputLayout>
+
+            <truemedicine.logiticks.com.trumedicine.views.CGButton
+                android:id="@+id/addDetailsToDbButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_bottom_space"
+                android:background="@drawable/add_button"
+                android:text="@string/add"
+                android:textColor="@android:color/white" />
+
+            <truemedicine.logiticks.com.trumedicine.views.CGButton
+                android:id="@+id/updateImageDetailsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_button"
+                android:layout_marginBottom="@dimen/layout_bottom_space"
+                android:text="@string/update"
+                android:textColor="@android:color/white" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id" />
+</RelativeLayout>

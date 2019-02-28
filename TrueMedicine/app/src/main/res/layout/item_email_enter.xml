@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_toLeftOf="@+id/deleteButton"
+        android:layout_height="wrap_content"
+        >
+
+        <truemedicine.logiticks.com.trumedicine.views.CGEditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/layout_bottom_space"
+            android:ems="10"
+            android:hint="@string/enter_email"
+            android:inputType="textEmailAddress" />
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/inner_padding"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_delete_black_24dp"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>

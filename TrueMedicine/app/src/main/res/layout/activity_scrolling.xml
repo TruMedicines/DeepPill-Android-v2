@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.ScanActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/selected_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+
+                    android:scaleType="fitCenter"
+                    android:visibility="visible"
+                    tools:ignore="ContentDescription" />
+
+
+                <truemedicine.logiticks.com.trumedicine.views.CGTextViewLight
+                    android:id="@+id/qr_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="220dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:drawableLeft="@drawable/qr_code_scan"
+                    android:drawablePadding="@dimen/activity_horizontal_margin"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+                    android:background="#64353535"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center_vertical|right">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|right"
+                                android:paddingRight="10dp"
+                                android:text="Take a Photo"
+                                android:textColor="#fff"
+                                android:textSize="20sp" />
+
+                            <truemedicine.logiticks.com.trumedicine.views.FloatingActionButton
+                                android:id="@+id/fab_scan_image"
+                                style="@style/MenuButtonsStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_camera_alt_white_36dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|right"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|right"
+                                android:paddingRight="10dp"
+                                android:text="Choose From Library"
+                                android:textColor="#fff"
+                                android:textSize="20sp" />
+
+                            <truemedicine.logiticks.com.trumedicine.views.FloatingActionButton
+                                android:id="@+id/fab_scan_qr"
+                                style="@style/MenuButtonsStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_image_white_36dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_scrolling" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id" />
+    <!-- <truemedicine.logiticks.com.truemedicine.views.FloatingActionMenu
+         app:layout_anchor="@id/main_coordinator_layout"
+         app:layout_anchorGravity="bottom|right|end"
+         android:id="@+id/search_image"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="bottom|end"
+         android:layout_margin="@dimen/fab_margin"
+         app:menu_animationDelayPerItem="0"
+         app:menu_colorNormal="@color/colorAccent"
+         app:menu_colorPressed="#c13e34"
+         app:menu_icon="@drawable/ic_search"
+         app:menu_labels_hideAnimation="@anim/jump_to_down"
+
+         app:menu_labels_showAnimation="@anim/jump_from_down"
+         app:menu_labels_style="@style/MenuLabelsStyle"
+         app:menu_shadowColor="#444">
+
+         <truemedicine.logiticks.com.truemedicine.views.FloatingActionButton
+             android:id="@+id/fab_scan_image"
+             style="@style/MenuButtonsStyle"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/ic_action_picture"
+             app:fab_label="Image Search" />
+
+         <truemedicine.logiticks.com.truemedicine.views.FloatingActionButton
+             android:id="@+id/fab_scan_qr"
+             style="@style/MenuButtonsStyle"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/ic_action_qr_code"
+             app:fab_label="QR code scan" />
+
+
+     </truemedicine.logiticks.com.truemedicine.views.FloatingActionMenu>-->
+
+
+</android.support.design.widget.CoordinatorLayout>

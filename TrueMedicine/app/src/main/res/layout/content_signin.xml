@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signup_linear_layout"
+    android:padding="@dimen/common_padding"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.SigninActivity"
+    tools:showIn="@layout/activity_signin">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="65dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/logo"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <truemedicine.logiticks.com.trumedicine.views.CGEditText
+                android:id="@+id/usernameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameEditText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/layout_bottom_space"
+                android:ems="10"
+                android:hint="@string/enter_email"
+                android:inputType="textEmailAddress" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <truemedicine.logiticks.com.trumedicine.views.CGEditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_bottom_space"
+                android:ems="10"
+                android:hint="@string/enter_password"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/signinButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/layout_bottom_space"
+            android:background="@drawable/upgrade_button"
+            android:text="@string/sign_in"
+            android:textColor="@color/button_text_color" />
+
+        <CheckBox
+            android:id="@+id/remember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/remember_me" />
+
+        <truemedicine.logiticks.com.trumedicine.views.CGTextViewLight
+            android:id="@+id/forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/forgot_password" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/not_a_member"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/sign_up"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.5"
+                android:background="@color/colorItemPressed"
+                android:gravity="center"
+                android:text="@string/sign_up"
+                android:textColor="@color/button_text_color" />
+
+            <Button
+                android:id="@+id/try_app"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.5"
+                android:background="@color/material_deep_teal_50"
+                android:gravity="center"
+                android:text="@string/try_app"
+                android:textColor="@color/button_text_color" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

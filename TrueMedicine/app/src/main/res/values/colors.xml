@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#20B2FF</color>
+    <color name="colorPrimaryDark">#20B2FF</color>
+    <color name="colorAccent">#e54d42</color>
+    <color name="colorItemPressed">#e28d42</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="black">#000</color>
+    <color name="main_drawer_head_bg">#2D3E50</color>
+    <color name="tooltip_bg">#d7d7d7</color>
+</resources>
