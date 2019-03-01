@@ -94,6 +94,7 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
     private static String mQRValue;
     private TextView mResultStatusTextView;
     private Uri tempfileUri;
+    private File tempFile;
     private IntentIntegrator intentIntegrator;
     private boolean mCropEnabled = false;
 
@@ -336,6 +337,8 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void chooseFromLibrary() {
+        tempFile = null;
+
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, SELECT_PICTURE);
     }
@@ -345,7 +348,8 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
                 android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         Intent intents = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-        tempfileUri  = FileProvider.getUriForFile(this, this.getApplicationContext().getPackageName() + ".FileProvider", AppUtils.getOutputMediaFile());
+        tempFile = AppUtils.getOutputMediaFile();
+        tempfileUri  = FileProvider.getUriForFile(this, this.getApplicationContext().getPackageName() + ".FileProvider", tempFile);
 
         intents.putExtra(MediaStore.EXTRA_OUTPUT, tempfileUri);
 
@@ -374,7 +378,14 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
 
                 Log.d("myTag", "Search is occurring");
 
-                networkManager.postRequest(NetworkOptions.POST_REQUEST, Urls.IMAGE_SEARCH_URL, new File(fileUri.getPath()), Urls.IMAGE_SEARCH_URL_TAG, true);
+                if (tempFile != null)
+                {
+                    networkManager.postRequest(NetworkOptions.POST_REQUEST, Urls.IMAGE_SEARCH_URL, tempFile, Urls.IMAGE_SEARCH_URL_TAG, true);
+                }
+                else
+                {
+                    networkManager.postRequest(NetworkOptions.POST_REQUEST, Urls.IMAGE_SEARCH_URL, new File(fileUri.getPath()), Urls.IMAGE_SEARCH_URL_TAG, true);
+                }
             }
         }
     }
@@ -524,6 +535,7 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
 //                    File file = new File(AppUtils.getPath(getApplicationContext(), data.getData()));
 //                    tempfileUri = Uri.fromFile(file);
 
+                    searchModeTemp = Urls.IMAGE_SEARCH_URL_TAG;
                     cropImage();
 
                 }

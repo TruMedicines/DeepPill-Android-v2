@@ -352,7 +352,7 @@ public class NetworkManager implements NetworkOptions {
 
 
     public void postRequest(int requestType, String url, final File file, final int requestId, final boolean needToken) {
-        Log.d(REQUEST_TAG, url + file.getAbsolutePath());
+        Log.d(REQUEST_TAG, url + "   " + file.getAbsolutePath());
 
 
         mImageFile = file;

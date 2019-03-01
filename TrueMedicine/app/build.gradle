@@ -12,10 +12,10 @@ android {
     compileSdkVersion 26
     buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId "com.TruMedicines.app"
+        applicationId "com.TruMedicines.deeppill"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 3
+        versionCode 4
         versionName "1.0.20"
         signingConfig signingConfigs.config
     }
